@@ -129,8 +129,6 @@ exports.getAppInstanceId =
  */
 function() {
     return new Promise(function(resolve, reject) {
-        exec(function(result) {
-            resolve(result.appInstanceId);
-        }, reject, PLUGIN_NAME, "getAppInstanceId", []);
+        exec(resolve, reject, PLUGIN_NAME, "getAppInstanceId", []);
     });
 };
