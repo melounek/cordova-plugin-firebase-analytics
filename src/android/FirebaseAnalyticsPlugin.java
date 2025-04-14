@@ -82,6 +82,24 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
         callbackContext.success();
     }
 
+    @CordovaMethod
+    protected void getAppInstanceId(CordovaArgs args, CallbackContext callbackContext) {
+        firebaseAnalytics.getAppInstanceId()
+            .addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    try {
+                        JSONObject result = new JSONObject();
+                        result.put("appInstanceId", task.getResult());
+                        callbackContext.success(result);
+                    } catch (JSONException e) {
+                        callbackContext.error(e.getMessage());
+                    }
+                } else {
+                    callbackContext.error(task.getException().getMessage());
+                }
+            });
+    }
+
     private static Bundle parse(JSONObject params) throws JSONException {
         Bundle bundle = new Bundle();
         Iterator<String> it = params.keys();

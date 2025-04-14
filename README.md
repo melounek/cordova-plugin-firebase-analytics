@@ -30,6 +30,7 @@
     - [setEnabled](#setenabled)
     - [setUserId](#setuserid)
     - [setUserProperty](#setuserproperty)
+    - [getAppInstanceId](#getappinstanceid)
 
 <!-- /MarkdownTOC -->
 
@@ -274,5 +275,23 @@ cordova.plugins.firebase.analytics.setUserProperty("name1", "value1");
 #### Returns
 
 `Promise`<`void`\>
+
+Callback when operation is completed
+
+### getAppInstanceId
+
+**getAppInstanceId**(): `Promise`<`{appInstanceId: string}`\>
+
+Returns app instance identifier from Firebase.
+
+**`Example`**
+
+```ts
+cordova.plugins.firebase.analytics.getAppInstanceId();
+```
+
+#### Returns
+
+`Promise`<`{appInstanceId: string}`\>
 
 Callback when operation is completed
