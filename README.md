@@ -280,7 +280,7 @@ Callback when operation is completed
 
 ### getAppInstanceId
 
-**getAppInstanceId**(): `Promise`<`{appInstanceId: string}`\>
+**getAppInstanceId**(): `Promise`<`string`\>
 
 Returns app instance identifier from Firebase.
 
@@ -292,6 +292,6 @@ cordova.plugins.firebase.analytics.getAppInstanceId();
 
 #### Returns
 
-`Promise`<`{appInstanceId: string}`\>
+`Promise`<`string`\>
 
 Callback when operation is completed
