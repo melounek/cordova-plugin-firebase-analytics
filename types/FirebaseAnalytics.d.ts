@@ -72,3 +72,12 @@ export function setCurrentScreen(screenName: string): Promise<void>;
  * cordova.plugins.firebase.analytics.setDefaultEventParameters({foo: "bar"});
  */
 export function setDefaultEventParameters(defaults: Record<string, number | string | Array<object>>): Promise<void>;
+/**
+ * Returns app instance identifier from Firebase.
+ *
+ * @returns {Promise<string>} Callback when operation is completed
+ *
+ * @example
+ * cordova.plugins.firebase.analytics.getAppInstanceId();
+ */
+export function getAppInstanceId(): Promise<string>;
